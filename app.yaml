@@ -1,0 +1,20 @@
+version: mark21
+runtime: custom
+vm: true
+api_version: 1
+
+manual_scaling:
+  instances: 1
+
+handlers:
+
+- url: /(.*\.(html|css|js))
+  static_files: public/\1
+  upload: public/(.*\.(html|css|js))
+
+- url: /
+  static_files: public/index.html
+  upload: public/index.html
+
+- url: /.*
+  script: server.js

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Tahoma, Geneva, sans-serif;
+      }
+      div {
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="messages">
+    </div>
+    <br />
+    <div id="send">
+      <input type="text" id="iptSend" placeholder="send message to server" />
+      <input type="button" value="send" id="btnSend">
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+          var host = window.document.location.host.replace(/:.*/, '');
+          var ws = new WebSocket('ws://' + host + ':8080');
+
+          $('#btnSend').click(function(){
+            ws.send($('#iptSend').val());
+          });
+
+          ws.onmessage = function (event) {
+            console.log(event.data);
+            $('#messages').append(event.data+'<br />');
+          };
+      });
+
+    </script>
+  </body>
+</html>

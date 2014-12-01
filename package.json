@@ -1,0 +1,16 @@
+{
+  "name": "dummy_socket",
+  "version": "0.0.0",
+  "description": "really simple test of websocket",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcos Bérgamo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.10.4",
+    "ws": "^0.5.0",
+    "appengine": "git://github.com/GoogleCloudPlatform/appengine-nodejs.git"
+  }
+}
