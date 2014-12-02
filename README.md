@@ -9,20 +9,24 @@ Create a virtual environment, and get the gcloud components. You will use the Ma
 
 Then, clone this project on your machine.
 
-.. code-block:: sh
+```
 
 $ cd /path/to/this/project/appengine-websocket-nodejs
 $ npm install
 $ node app.js
+
+```
 
 
 ## Deploying
 
 ### How to deploy
 
-.. code-block:: sh
+```
 
 $ gcloud preview app deploy . --force
+
+```
 
 ### How to setup the deployment environment
   On your account at the Google Cloud Platform you need access the Menu:
