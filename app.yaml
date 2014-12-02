@@ -6,6 +6,9 @@ api_version: 1
 manual_scaling:
   instances: 1
 
+network:
+  forwarded_ports: ["3000"]
+
 handlers:
 
 - url: /(.*\.(html|css|js))

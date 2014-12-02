@@ -10,23 +10,23 @@ app.use(appengine.middleware.base);
 
 app.get('/_ah/health', function(req, res) {
   res.set('Content-Type', 'text/plain');
-  res.send(200, 'ok');
+  res.status(200).send('ok');
 });
 
 app.get('/_ah/start', function(req, res) {
   res.set('Content-Type', 'text/plain');
-  res.send(200, 'ok');
+  res.status(200).send('ok');
 });
 
-app.get('/_ah/stop', function(req, res) {
+/*app.get('/_ah/stop', function(req, res) {
   res.set('Content-Type', 'text/plain');
-  res.send(200, 'ok');
+  res.status(200).send('ok');
   process.exit();
-});
+});*/
 
 server.listen(8080, '0.0.0.0');
 
-var wss = new WebSocketServer({server: server});
+var wss = new WebSocketServer({host: '0.0.0.0', port: 3000});
 wss.on('connection', function(ws){
   console.log('socket connected');
 

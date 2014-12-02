@@ -21,8 +21,8 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
       $(function(){
-          var host = window.document.location.host.replace(/:.*/, '');
-          var ws = new WebSocket('ws://' + host + ':8080');
+          var host = 'your-ip';
+          var ws = new WebSocket('ws://' + host + ':3000');
 
           $('#btnSend').click(function(){
             ws.send($('#iptSend').val());
